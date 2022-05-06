@@ -14,4 +14,6 @@ if (UNIX)
     target_link_libraries(${PROJECT_NAME} PRIVATE -lstdc++fs)
 endif()
 
+install(TARGETS ${PROJECT_NAME} DESTINATION "bin")
+install(DIRECTORY "${PROJECT_SOURCE_DIR}/data/lists" DESTINATION "bin/data")
 
