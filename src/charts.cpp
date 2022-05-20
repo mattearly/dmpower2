@@ -80,15 +80,15 @@ void Charts::displayPoisonSalesChart()
   poisonfile.open(DATA_DIR + "poisonlist.dat");
   if (!poisonfile.is_open())
   {
-    cout << "Error Opening poisonlist.dat, check your file.\n\n";
+   cout << "Error Opening poisonlist.dat, check your file.\n\n";
   }
   string poisons = "";
   if (poisonfile.is_open())
   {
-    while (!poisonfile.eof())
-    {
-      poisons += poisonfile.get();
-    }
+   while (!poisonfile.eof())
+   {
+     poisons += poisonfile.get();
+   }
   }
   poisons.erase(poisons.length() - 1, poisons.length()); //erase that last random [box] character
   cout << poisons;
