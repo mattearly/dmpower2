@@ -3,12 +3,14 @@
 #include <string>
 
 using namespace std;
+extern std::string RUNTIME_PATH;
 
 void CharacterName::grabRandomName(string &name)
 {
   ifstream fileOfNames;
   string tmpName;
-  fileOfNames.open(DATA_DIR + "names.dat");
+  const std::string full_name_file = RUNTIME_PATH + DATA_DIR + "names.dat";
+  fileOfNames.open(full_name_file);
 
   if (fileOfNames.is_open())
   {
@@ -29,7 +31,7 @@ void CharacterName::grabRandomName(string &name)
   }
   else
   {
-    tmpName = "error with name file, may be in use or if not, check code";
+    tmpName = "error with name file, may be in use or if not, check code | " + full_name_file;
   }
 
   if (*tmpName.rbegin() == '\r')
