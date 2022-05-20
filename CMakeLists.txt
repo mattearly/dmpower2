@@ -4,7 +4,7 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # main exe
-file(GLOB_RECURSE SRC_FILES "src/*.cpp" "src/*.h")
+file(GLOB_RECURSE SRC_FILES "src/*.cpp")
 add_executable(${PROJECT_NAME} ${SRC_FILES})
 
 # runtime data
