@@ -1,0 +1,51 @@
+set(TARGET "dmpower")
+
+message(STATUS "========== Configuring ${TARGET} ==========" )
+
+add_executable(${TARGET}
+  campaign.cpp
+  character_background.cpp
+  character_classes.cpp
+  character_export.cpp
+  character_feats.cpp
+  character_print.cpp
+  character_random_name.cpp
+  character_skills.cpp
+  character_update.cpp
+  characters.cpp
+  charts.cpp
+  gear.cpp
+  gen_dungeon.cpp
+  gen_encounter.cpp
+  gen_experience.cpp
+  gen_insult.cpp
+  gen_name.cpp
+  gen_reward.cpp
+  globalfuncts.cpp
+  main.cpp
+  menu.cpp
+  races.cpp
+  save.cpp
+  user_settings.cpp
+  campaign.h
+  characters.h
+  charts.h
+  gear.h
+  gen_dungeon.h
+  gen_encounter.h
+  gen_experience.h
+  gen_insult.h
+  gen_name.h
+  gen_reward.h
+  globalfuncts.h
+  races.h
+  terminal_colors.h
+)
+
+# runtime data
+file(COPY "${PROJECT_SOURCE_DIR}/data/lists/" DESTINATION "${CMAKE_BINARY_DIR}/data/lists/")
+
+if (UNIX)
+    target_link_libraries(${TARGET} PRIVATE -lstdc++fs)
+endif()
+
