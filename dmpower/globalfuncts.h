@@ -26,7 +26,7 @@ extern const std::string DOCUMENT_SAVE_DIR;
 extern bool loadSuccess;
 extern std::string saveVersion;
 extern std::string insult_mode;
-extern void menu();
+extern void main_menu();
 extern void set_user_pref_from_file();
 extern std::string insult_mode;
 extern bool clearScreens;
@@ -111,6 +111,10 @@ std::string D_D_Ability_Modifier(const T& a) {
   return tmp;
 }
 
+/** turn an ability stat into the appropriate mod value
+ * which is floor ((value-10)/2.0)
+ * ie: ... 8=-1, 10=0, 12=+1, and so on
+ */
 int getAbilityMod(const int&);
 
 void simpleClearScreen();

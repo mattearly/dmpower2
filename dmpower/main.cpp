@@ -8,7 +8,7 @@ int main()
   if (autoLoad)
     load_last_save();
 
-  menu();
+  main_menu();
 
   return 0;
 }

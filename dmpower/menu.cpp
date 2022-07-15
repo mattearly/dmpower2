@@ -16,7 +16,7 @@ static int choice = 0;
 
 void other_tools();
 
-void menu()
+void main_menu()
 {
   mainMessage = "Dungeon Master Power! (build:" + buildNumber + ")";
   do
@@ -123,7 +123,7 @@ void other_tools()
     }
   } while (choice < 6);
 
-  // reset choice back to 0 after leaving this menu
+  // reset choice back to 0 after leaving this main_menu
   if (choice == 6)
   {
     choice = 0;
