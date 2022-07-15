@@ -1,3 +1,6 @@
+set(CONFIGFILE "dmpowerconfig.h")
+configure_file("${CONFIGFILE}.in" ${CONFIGFILE})
+
 set(TARGET "dmpower")
 
 message(STATUS "========== Configuring ${TARGET} ==========" )
@@ -42,10 +45,17 @@ add_executable(${TARGET}
   terminal_colors.h
 )
 
+
+message(STATUS "Binary Dir: ${CMAKE_BINARY_DIR} ==========" )
+
 # runtime data
-file(COPY "${PROJECT_SOURCE_DIR}/data/lists/" DESTINATION "${CMAKE_BINARY_DIR}/data/lists/")
+file(COPY "${PROJECT_SOURCE_DIR}/data/lists/" DESTINATION "${CMAKE_BINARY_DIR}/dmpower/data/lists/")
 
 if (UNIX)
     target_link_libraries(${TARGET} PRIVATE -lstdc++fs)
 endif()
 
+target_include_directories(${TARGET} PUBLIC "${PROJECT_BINARY_DIR}")
+
+install(TARGETS ${TARGET} DESTINATION bin)
+install(DIRECTORY "${PROJECT_SOURCE_DIR}/data/lists" DESTINATION bin/data)
