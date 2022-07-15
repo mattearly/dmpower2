@@ -1,6 +1,6 @@
-# DMPOWER
+# dmpower-dungeons-and-dragons-5e
 
-DMPOWER is a Dungeons & Dragons 5th edition toolkit for Dungeon Masters. Its primary use is to hasten game prep and on the fly assistance. DMPOWER runs in a terminal window and prompts all available options.  
+[dmpower](https://github.com/mattearly/dmpower-dungeons-and-dragons-5e) is a Dungeons & Dragons 5th edition toolkit for Dungeon Masters. Its primary use is to hasten game prep and on the fly assistance. DMPOWER runs in a terminal window and prompts all available options.  
 
 ## Main Features
 
