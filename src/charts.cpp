@@ -11,7 +11,8 @@ void Charts::showChartMenu()
   const int MAXCHARTCHOICE = 6;
   while (chart_choice != MAXCHARTCHOICE)
   {
-    if (clearScreens) simpleClearScreen();
+    if (clearScreens)
+      simpleClearScreen();
     cout
         << "----------------- CHARTS -----------------\n"
         << " 1. Player Behavioral Problems Flowchart\n"
@@ -82,18 +83,19 @@ void Charts::displayPoisonSalesChart()
   poisonfile.open(RUNTIME_PATH + DATA_DIR + "poisonlist.dat");
   if (!poisonfile.is_open())
   {
-   cout << "Error Opening poisonlist.dat, check your file.\n\n";
+    cout << "Error Opening poisonlist.dat, check your file.\n\n";
   }
   string poisons = "";
   if (poisonfile.is_open())
   {
-   while (!poisonfile.eof())
-   {
-     poisons += poisonfile.get();
-   }
+    while (!poisonfile.eof())
+    {
+      poisons += poisonfile.get();
+    }
   }
-  poisons.erase(poisons.length() - 1, poisons.length()); //erase that last random [box] character
+  poisons.erase(poisons.length() - 1, poisons.length()); // erase that last random [box] character
   cout << poisons;
+  poisonfile.close();
   pressEnterToContinue();
 }
 
@@ -115,9 +117,10 @@ void Charts::displayDiseaseChart()
         diseases += diseasefile.get();
       }
     }
-    diseases.erase(diseases.length() - 1, diseases.length()); //erase that last random [box] character
+    diseases.erase(diseases.length() - 1, diseases.length()); // erase that last random [box] character
     cout << diseases;
   }
+  diseasefile.close();
   pressEnterToContinue();
 }
 
@@ -137,14 +140,16 @@ void Charts::displayMadnessChart()
       madness += madnessfile.get();
     }
   }
-  madness.erase(madness.length() - 1, madness.length()); //erase that last random [box] character
+  madness.erase(madness.length() - 1, madness.length()); // erase that last random [box] character
   cout << madness;
+  madnessfile.close();
   pressEnterToContinue();
 }
 
 void Charts::walkThroughPlayerBehavioralResolutionChart()
 {
-  if (clearScreens) simpleClearScreen();
+  if (clearScreens)
+    simpleClearScreen();
   cout << "So a player is giving you trouble eh?\n"
        << "First, talk to them about it.\n";
 
