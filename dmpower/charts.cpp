@@ -74,21 +74,23 @@ void Charts::displayExperienceChart()
   pressEnterToContinue();
 }
 
+extern std::string RUNTIME_PATH;
+
 void Charts::displayPoisonSalesChart()
 {
   fstream poisonfile;
-  poisonfile.open(DATA_DIR + "poisonlist.dat");
+  poisonfile.open(RUNTIME_PATH + DATA_DIR + "poisonlist.dat");
   if (!poisonfile.is_open())
   {
-    cout << "Error Opening poisonlist.dat, check your file.\n\n";
+   cout << "Error Opening poisonlist.dat, check your file.\n\n";
   }
   string poisons = "";
   if (poisonfile.is_open())
   {
-    while (!poisonfile.eof())
-    {
-      poisons += poisonfile.get();
-    }
+   while (!poisonfile.eof())
+   {
+     poisons += poisonfile.get();
+   }
   }
   poisons.erase(poisons.length() - 1, poisons.length()); //erase that last random [box] character
   cout << poisons;
@@ -98,7 +100,7 @@ void Charts::displayPoisonSalesChart()
 void Charts::displayDiseaseChart()
 {
   fstream diseasefile;
-  diseasefile.open(DATA_DIR + "diseaselist.dat");
+  diseasefile.open(RUNTIME_PATH + DATA_DIR + "diseaselist.dat");
   if (!diseasefile.is_open())
   {
     cout << "Error Opening diseaselist.dat, check your file.\n\n";
@@ -122,7 +124,7 @@ void Charts::displayDiseaseChart()
 void Charts::displayMadnessChart()
 {
   fstream madnessfile;
-  madnessfile.open(DATA_DIR + "madnesslist.dat");
+  madnessfile.open(RUNTIME_PATH + DATA_DIR + "madnesslist.dat");
   if (!madnessfile.is_open())
   {
     cout << "Error Opening madnesslist.dat, check your file.\n\n";

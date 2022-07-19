@@ -6,7 +6,7 @@
 
 std::string lastSave;
 bool is_random = false; // for the random character gen operation triggers
-std::string buildNumber = "12"; // iterate with every new build release
+std::string buildNumber = "13"; // iterate with every new build release
 std::string saveVersion = "9"; // oldest version the current saves work with
 std::string mainMessage;
 bool loadSuccess = false;
@@ -142,7 +142,6 @@ int getNumber(const std::string& message, const int& a, const int& b) {
 
   if (is_random) {
     int rand_num = randomNumber(a, b);
-    std::cout << message << rand_num << '\n';
     return rand_num;
   }
 

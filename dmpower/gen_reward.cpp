@@ -5702,11 +5702,14 @@ void Magic_Items::SingleScroll(const int &lvl) const
     break;
   }
 }
+
+extern std::string RUNTIME_PATH;
+
 string Magic_Items::GenerateGemstone(const int &amount, const int &value) const
 {
   string gemstring = "error: check code or gemfile";
   ifstream fileOfGems;
-  fileOfGems.open(DATA_DIR + "gems.dat");
+  fileOfGems.open(RUNTIME_PATH + DATA_DIR + "gems.dat");
   if (fileOfGems.is_open())
   {
     string tmpName = "";
@@ -5850,7 +5853,7 @@ string Magic_Items::GenerateArt(const int &amount, const int &value) const
 {
   string artstring = "error: check code or artfile";
   ifstream fileOfArt;
-  fileOfArt.open(DATA_DIR + "artObjects.dat");
+  fileOfArt.open(RUNTIME_PATH + DATA_DIR + "artObjects.dat");
   if (fileOfArt.is_open())
   {
     string tmpName = "";
