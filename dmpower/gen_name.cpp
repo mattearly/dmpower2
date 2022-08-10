@@ -3,14 +3,13 @@
 #include <string>
 
 using namespace std;
-extern std::string RUNTIME_PATH;
 
 void CharacterName::grabRandomName(string &name)
 {
   ifstream fileOfNames;
   string tmpName;
-  const std::string full_name_file = RUNTIME_PATH + DATA_DIR + "names.dat";
-  fileOfNames.open(full_name_file);
+  const std::string full_name_file = DATA_DIR + "names.dat";
+  fileOfNames.open(full_name_file, ios_base::in);
 
   if (fileOfNames.is_open())
   {

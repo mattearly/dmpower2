@@ -7,7 +7,7 @@ message(STATUS "========== Configuring ${TARGET} ==========" )
 
 add_executable(${TARGET}
 #object files
- campaign.cpp
+  campaign.cpp
   character_background.cpp
   character_classes.cpp
   character_export.cpp
@@ -61,5 +61,6 @@ if (WIN32)
 endif()
 
 if (UNIX)
-  install(DIRECTORY "${PROJECT_SOURCE_DIR}/data/lists" DESTINATION ${HOME}/.dmpower/data)
+  set(CMAKE_INSTALL_PREFIX /usr)
+  install(DIRECTORY "${PROJECT_SOURCE_DIR}/data/lists" DESTINATION share/dmpower/data)
 endif()

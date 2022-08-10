@@ -54,19 +54,19 @@ _[more screenshots](https://imgur.com/a/S3t73rI)_
   - Diseases chart
   - Player problem resolution flowchart walkthrough (based off of and credits to the creator for the idea [Resolving Basic Behavioral Problems in your Tabletop RPG Group: A Flowchart](https://www.reddit.com/r/rpg/comments/3avp57/resolving_basic_behavioral_problems_in_your/)
 
-## Building dmpower
+## Building & installing dmpower
 
 - Use CMake to generate for the toolchain of your preference
 
-- example:
+- linux install example:
 ```bash
 git clone https://github.com/mattearly/dmpower.git
 cd dmpower
-cmake -B build -S .
-cd build
-make
-./dmpower
+cmake -DCMAKE_INSTALL_PREFIX=/usr
+sudo make all install
 ```
+
+You can now run dmpower from your terminal any time by typing the command ```dmpower```
 
 ### Build Dependencies
 

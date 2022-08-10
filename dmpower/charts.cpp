@@ -74,15 +74,15 @@ void Charts::displayExperienceChart()
   pressEnterToContinue();
 }
 
-extern std::string RUNTIME_PATH;
-
 void Charts::displayPoisonSalesChart()
 {
   fstream poisonfile;
-  poisonfile.open(RUNTIME_PATH + DATA_DIR + "poisonlist.dat");
+  const std::string full_poisonfile_path = DATA_DIR + "poisonlist.dat";
+  poisonfile.open(full_poisonfile_path, ios_base::in);
   if (!poisonfile.is_open())
   {
-   cout << "Error Opening poisonlist.dat, check your file.\n\n";
+   cout << "Error Opening poisonlist.dat, check your file: " << full_poisonfile_path << "\n\n";
+   return;
   }
   string poisons = "";
   if (poisonfile.is_open())
@@ -100,10 +100,12 @@ void Charts::displayPoisonSalesChart()
 void Charts::displayDiseaseChart()
 {
   fstream diseasefile;
-  diseasefile.open(RUNTIME_PATH + DATA_DIR + "diseaselist.dat");
+  const std::string full_diseasfile_path = DATA_DIR + "diseaselist.dat";
+  diseasefile.open(full_diseasfile_path, ios_base::in);
   if (!diseasefile.is_open())
   {
-    cout << "Error Opening diseaselist.dat, check your file.\n\n";
+    cout << "Error Opening diseaselist.dat, check your file: " << full_diseasfile_path << "\n\n";
+    return;
   }
   else
   {
@@ -124,10 +126,12 @@ void Charts::displayDiseaseChart()
 void Charts::displayMadnessChart()
 {
   fstream madnessfile;
-  madnessfile.open(RUNTIME_PATH + DATA_DIR + "madnesslist.dat");
+  const std::string full_madnessfile_path = DATA_DIR + "madnesslist.dat";
+  madnessfile.open(full_madnessfile_path, ios_base::in);
   if (!madnessfile.is_open())
   {
-    cout << "Error Opening madnesslist.dat, check your file.\n\n";
+    cout << "Error Opening madnesslist.dat, check your file: " << full_madnessfile_path << "\n\n";
+    return;
   }
   string madness = "";
   if (madnessfile.is_open())

@@ -15,7 +15,7 @@ string Insult::laydownheat() const
 
   if (insult_mode.compare("clean") == 0)
   { //clean insult
-    madfile.open(DATA_DIR + "insults-clean.dat");
+    madfile.open(DATA_DIR + "insults-clean.dat", ios_base::in);
     if (madfile.is_open())
     {
       string tmpName = "";
@@ -41,7 +41,7 @@ string Insult::laydownheat() const
   }
   else if (insult_mode.compare("dirty") == 0)
   { //dirty insult
-    madfile.open(DATA_DIR + "insults-dirty.dat");
+    madfile.open(DATA_DIR + "insults-dirty.dat", ios_base::in);
     if (madfile.is_open())
     {
       string tmpName = "";
