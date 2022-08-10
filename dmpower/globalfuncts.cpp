@@ -11,7 +11,11 @@ std::string saveVersion = "9"; // oldest version the current saves work with
 std::string mainMessage;
 bool loadSuccess = false;
 std::string loadedFile = "";
+#ifdef __linux__
+const std::string DATA_DIR = "/usr/share/dmpower/data/lists/";
+#elif _WIN32
 const std::string DATA_DIR = "./data/lists/";
+#endif
 
 Campaign myGame;
 std::string insult_mode;
