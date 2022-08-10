@@ -30,4 +30,12 @@ const std::string YELLOW = "";
 const std::string BLUE = "";
 const std::string MAGENTA = "";
 const std::string CYAN = "";
+#elif __APPLE__
+const std::string RESET = "\e[0m";
+const std::string RED = "\e[31m";
+const std::string GREEN = "\e[32m";
+const std::string YELLOW = "\e[33m";
+const std::string BLUE = "\e[34m";
+const std::string MAGENTA = "\e[35m";
+const std::string CYAN = "\e[36m";
 #endif

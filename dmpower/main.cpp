@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
   if (autoLoad)
     load_last_save();
 
-  menu();
+  main_menu();
 
   return 0;
 }

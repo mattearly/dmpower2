@@ -1,6 +1,6 @@
-# DMPOWER
+# dmpower-dungeons-and-dragons-5e
 
-DMPOWER is a Dungeons & Dragons 5th edition toolkit for Dungeon Masters. Its primary use is to hasten game prep and on the fly assistance. DMPOWER runs in a terminal window and prompts all available options.  
+[dmpower-dungeons-and-dragons-5e](https://github.com/mattearly/dmpower-dungeons-and-dragons-5e) is a Dungeons & Dragons 5th edition toolkit for Dungeon Masters. Its primary use is to hasten game prep and on the fly assistance. dmpower runs in a terminal window and prompts all available options.
 
 ## Main Features
 
@@ -33,7 +33,7 @@ _[more screenshots](https://imgur.com/a/S3t73rI)_
   - Multiclassing
   - Personality traits
 
-## Other Tools Within DMPOWER
+## Other Tools Within dmpower
 
 ### Loot Rollers
 
@@ -68,23 +68,26 @@ make
 ./dmpower
 ```
 
-### Dependencies
+### Build Dependencies
 
-- C++17
+- C++17 or later Compiler
 
 ### Data
 
 #### Windows
 
-Exports go to `%USERPROFILE%/Documents/DMpowerExports/`.  Saves and settings go to `%USERPROFILE%/AppData/Local/dmpower`
+- Exports go to `%USERPROFILE%/Documents/DMpowerExports/`.
+- Saves and settings go to `%USERPROFILE%/AppData/Local/dmpower`
  
 #### Linux
 
-Exports go to `%USERPROFILE%/DMpowerExports/`.  Saves and settings go to `%USERPROFILE%/.dmpower`
+- Exports go to `%USERPROFILE%/DMpowerExports/`.
+- Saves and settings go to `%USERPROFILE%/.dmpower`
 
 #### MAC
 
-Not tested, should be similar to linux.
+- Exports go to `%HOME%/DMpowerExports/`.
+- Saves and settings go to `%HOME%/.dmpower`
 
 ## Sources
 
@@ -105,16 +108,17 @@ Not tested, should be similar to linux.
 
 ## Notes
 
-
 This is a just a personal side project thing I did for fun/practice/my own use. There is no funding or support and as such you should not expect anything. This project was something I personally made to assist with my DMing. 
 
 ### Legal
 
-This project and I are not affiliated with Wizards of the Coast or Hasbro. Due to the nature of the game data being used for this software, DMPOWER is not to be used for any form of profit or sale.
+This project and I are not affiliated with Wizards of the Coast or Hasbro. Due to the nature of the game data being used for this software, dmpwer is not to be used for any form of profit or sale.
 
 ### Development
 
 Generally, I develop this when I feel like it (usually after dming and realizing I want to add more). :P
+
+Anyone is welcome to contribute as this is an Open Source project.
 
 ## Special Thanks
 
