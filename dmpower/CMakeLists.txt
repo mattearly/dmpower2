@@ -6,7 +6,8 @@ set(TARGET "dmpower")
 message(STATUS "========== Configuring ${TARGET} ==========" )
 
 add_executable(${TARGET}
-  campaign.cpp
+#object files
+ campaign.cpp
   character_background.cpp
   character_classes.cpp
   character_export.cpp
@@ -30,6 +31,7 @@ add_executable(${TARGET}
   races.cpp
   save.cpp
   user_settings.cpp
+#header files
   campaign.h
   characters.h
   charts.h
@@ -45,17 +47,19 @@ add_executable(${TARGET}
   terminal_colors.h
 )
 
-
 message(STATUS "Binary Dir: ${CMAKE_BINARY_DIR} ==========" )
 
-# runtime data
+# binary runtime data for testing and running during development
 file(COPY "${PROJECT_SOURCE_DIR}/data/lists/" DESTINATION "${CMAKE_BINARY_DIR}/dmpower/data/lists/")
-
-if (UNIX)
-    target_link_libraries(${TARGET} PRIVATE -lstdc++fs)
-endif()
 
 target_include_directories(${TARGET} PUBLIC "${PROJECT_BINARY_DIR}")
 
 install(TARGETS ${TARGET} DESTINATION bin)
-install(DIRECTORY "${PROJECT_SOURCE_DIR}/data/lists" DESTINATION bin/data)
+
+if (WIN32)
+  install(DIRECTORY "${PROJECT_SOURCE_DIR}/data/lists" DESTINATION bin/data)
+endif()
+
+if (UNIX)
+  install(DIRECTORY "${PROJECT_SOURCE_DIR}/data/lists" DESTINATION ${HOME}/.dmpower/data)
+endif()
