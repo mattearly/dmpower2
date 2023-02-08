@@ -6,8 +6,8 @@
 
 std::string lastSave;
 bool is_random = false; // for the random character gen operation triggers
-std::string buildNumber = "13"; // iterate with every new build release
-std::string saveVersion = "9"; // oldest version the current saves work with
+std::string buildNumber = "14"; // iterate with every new build release
+std::string saveVersion = "9";  // oldest version the current saves work with
 std::string mainMessage;
 bool loadSuccess = false;
 std::string loadedFile = "";

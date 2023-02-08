@@ -18,7 +18,7 @@ void other_tools();
 
 void main_menu()
 {
-  mainMessage = "Dungeon Master Power! (build:" + buildNumber + ")";
+  mainMessage = "dmpower2 (build:" + buildNumber + ")";
   do
   {
     choice = 0;

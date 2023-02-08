@@ -1,3 +1,0 @@
-// the configured options and settings for Tutorial
-#define DungeonMasterPower_VERSION_MAJOR @DungeonMasterPower_VERSION_MAJOR@
-#define DungeonMasterPower_VERSION_MINOR @DungeonMasterPower_VERSION_MINOR@
