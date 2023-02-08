@@ -6,7 +6,9 @@ set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_subdirectory(dmpower2)
+
 enable_testing()
+
 # Include CDash dashboard testing module
 include(CTest)
 
@@ -18,3 +20,4 @@ set(CTEST_DROP_LOCATION "dmpower2")
 set(CTEST_DROP_SITE_CDASH TRUE)
 
 add_subdirectory(tests)
+
