@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.20)
+cmake_minimum_required(VERSION 3.12)
 
 set(CONFIGFILE "dmpowerconfig.h")
 configure_file("${CONFIGFILE}.in" ${CONFIGFILE})
@@ -45,6 +45,7 @@ add_executable(${DMPOWER2_EXE}
   globalfuncts.h
   races.h
   terminal_colors.h
+  ${CONFIGFILE}
 )
 
 message(STATUS "Binary Dir: ${CMAKE_BINARY_DIR} ==========" )
