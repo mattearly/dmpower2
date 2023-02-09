@@ -6002,9 +6002,9 @@ void Magic_Items::MakeSpellbook() const
   getline(cin, material);
   vector<string> spellholder;
   if (clearScreens) simpleClearScreen();
-  cout << " A New Spellbook Is Found!\n\n";
+  cout << "Spellbook Created!\n\n";
+  cout << "\"" << material << "\" " << "Spellbook\n";
   cout << usedpages << " / " << totalpages << " pages used." << '\n';
-  cout << "Made out of: " << material << '\n';
   //LEVEL 1 SPELLS
   if (first > 0)
   {
