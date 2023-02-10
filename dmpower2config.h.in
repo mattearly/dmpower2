@@ -1,0 +1,3 @@
+// the configured options and settings for Tutorial
+#define dmpower2_VERSION_MAJOR @dmpower2_VERSION_MAJOR@
+#define dmpower2_VERSION_MINOR @dmpower2_VERSION_MINOR@
