@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.12)
+cmake_minimum_required (VERSION 3.15)
 
 set(CONFIGFILE "dmpowerconfig.h")
 configure_file("${CONFIGFILE}.in" ${CONFIGFILE})
