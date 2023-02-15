@@ -1,7 +1,7 @@
 cmake_minimum_required (VERSION 3.15)
 
-set(CONFIGFILE "dmpowerconfig.h")
-configure_file("${CONFIGFILE}.in" ${CONFIGFILE})
+set(CONFIGFILE "dmpower2config.h")
+configure_file("../${CONFIGFILE}.in" ${CONFIGFILE})
 
 set(DMPOWER2_EXE "dmpower2")
 message(STATUS "========== Configuring ${DMPOWER2_EXE} ==========" )
@@ -47,13 +47,12 @@ add_executable(${DMPOWER2_EXE}
   terminal_colors.h
   ${CONFIGFILE}
 )
+target_include_directories(${DMPOWER2_EXE} PUBLIC "${PROJECT_BINARY_DIR}")
 
 message(STATUS "Binary Dir: ${CMAKE_BINARY_DIR} ==========" )
 
 # binary runtime data for testing and running during development
 file(COPY "${PROJECT_SOURCE_DIR}/data/lists/" DESTINATION "${CMAKE_BINARY_DIR}/${DMPOWER2_EXE}/data/lists/")
-
-target_include_directories(${DMPOWER2_EXE} PUBLIC "${PROJECT_BINARY_DIR}")
 
 include(InstallRequiredSystemLibraries)
 
