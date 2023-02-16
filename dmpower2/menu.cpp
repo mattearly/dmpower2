@@ -9,6 +9,7 @@
 #include "terminal_colors.h"
 #include <string>
 #include <iostream>
+#include "dmpower2Config.h"
 
 using namespace std;
 
@@ -18,7 +19,10 @@ void other_tools();
 
 void main_menu()
 {
-  mainMessage = "dmpower2 (build:" + buildNumber + ")";
+  {
+    std::string version_string = to_string(dmpower2_VERSION_MAJOR) + "." + to_string(dmpower2_VERSION_MINOR);
+    mainMessage = "dmpower2 (version: " + version_string + ")";
+  }
   do
   {
     choice = 0;

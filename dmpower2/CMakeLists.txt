@@ -1,11 +1,6 @@
 cmake_minimum_required (VERSION 3.15)
 
-set(CONFIGFILE "dmpower2config.h")
-configure_file("../${CONFIGFILE}.in" ${CONFIGFILE})
-
-set(DMPOWER2_EXE "dmpower2")
-message(STATUS "========== Configuring ${DMPOWER2_EXE} ==========" )
-add_executable(${DMPOWER2_EXE}
+add_executable(${PROJECT_NAME}
 #object files
   campaign.cpp
   character_background.cpp
@@ -45,23 +40,19 @@ add_executable(${DMPOWER2_EXE}
   globalfuncts.h
   races.h
   terminal_colors.h
-  ${CONFIGFILE}
+  ../${CONFIGFILE}
 )
-target_include_directories(${DMPOWER2_EXE} PUBLIC "${PROJECT_BINARY_DIR}")
-
-message(STATUS "Binary Dir: ${CMAKE_BINARY_DIR} ==========" )
+target_include_directories(${PROJECT_NAME} PUBLIC "${PROJECT_BINARY_DIR}")
 
 # binary runtime data for testing and running during development
-file(COPY "${PROJECT_SOURCE_DIR}/data/lists/" DESTINATION "${CMAKE_BINARY_DIR}/${DMPOWER2_EXE}/data/lists/")
+file(COPY "${PROJECT_SOURCE_DIR}/data/lists/" DESTINATION "${CMAKE_BINARY_DIR}/${PROJECT_NAME}/data/lists/")
 
+# install
 include(InstallRequiredSystemLibraries)
-
-install(TARGETS ${DMPOWER2_EXE} DESTINATION bin)
-
+install(TARGETS ${PROJECT_NAME} DESTINATION bin)
 if (WIN32)
   install(DIRECTORY "${PROJECT_SOURCE_DIR}/data/lists" DESTINATION bin/data)
 endif()
-
 if (UNIX)
   set(CMAKE_INSTALL_PREFIX /usr)
   install(DIRECTORY "${PROJECT_SOURCE_DIR}/data/lists" DESTINATION share/dmpower/data)
